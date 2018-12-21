@@ -4,7 +4,7 @@ const webpackConfigBase = require('./webpack.base.config')
 const OpenBrowserPlugin = require('open-browser-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const PORT = 3000
+const PORT = 1999
 
 function resolve(relatedPath) {
     return path.join(__dirname, relatedPath)

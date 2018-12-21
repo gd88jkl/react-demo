@@ -10,7 +10,7 @@ const webpackConfigBase = {
     },
     output: {
         path: resolve('../dist'),
-        publicPath: '/',//这样引入的js文件就是绝对路径
+        publicPath: '/',
         filename: 'static/js/[name].[hash:4].js',
         chunkFilename: 'static/js/chunks/[name].[hash:4].js',
     },
@@ -27,26 +27,11 @@ const webpackConfigBase = {
                 test: /\.js[x]?$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader'
-                // use: {
-                    //options配置等同.babelrc的配置。babel-plugin-import按需加载
-                    // options: {
-                    //     presets: ['@babel/preset-env', '@babel/preset-react'],
-                    //     plugins: [
-                    //         [
-                    //             "import",
-                    //             {
-                    //                 "libraryName": "antd",
-                    //                 "style": true
-                    //             }
-                    //         ]
-                    //     ]
-                    // }
-                // }
             }, {
                 test: /\.(css|less)$/,
                 include: [
                     resolve('../public/styles'),
-                    resolve('../src/components'),
+                    resolve('../src'),
                     resolve('../node_modules/antd')
                 ],
                 use: [{
